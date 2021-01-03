@@ -1,80 +1,79 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import PokemonCard from '../components/PokemonCard';
+import PokemonInfo from '../components/PokemonInfo';
  
-class Stuff extends Component {
+class PokemonCatalog extends Component {
   render() {
     return (
       <MainContainer>
-        <LeftPanel>
-          <Row>
+        <LeftPanel height='calc(100vh - 56px)'>
+          <CardRow>
             <PokemonCard />
             <PokemonCard />
             <PokemonCard />
-          </Row>
-          <Row>
             <PokemonCard />
             <PokemonCard />
             <PokemonCard />
-          </Row>
-          <Row>
             <PokemonCard />
             <PokemonCard />
             <PokemonCard />
-          </Row>
-          <Row>
             <PokemonCard />
             <PokemonCard />
-            <PokemonCard />
-          </Row>
+          </CardRow>
         </LeftPanel>
         <RightPanel>
-          <Row>
-            <PokemonCard />
-          </Row>
+          <PokemonInfoContainer>
+            <PokemonInfo />
+          </PokemonInfoContainer>
         </RightPanel>
       </MainContainer>
     );
   }
 }
-
-const MainContainer = styled.div`
-  background-color: red;
+  
+const CardRow = styled.div`
+  align-items: flex-start;
+  display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px;
+  overflow-y: scroll;
+  flex-wrap: wrap;
 `;
 
 const LeftPanel = styled.div`
   background-color: blue;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  height: 100%;
-  margin-right: 35%;
-  overflow: auto;
-  width: 65%;
+  flex-grow: 3;
+  height: ${props => props.height};
+`;
+
+const MainContainer = styled.div`
+  background-color: red;
+  display: grid;
+  grid-template-areas: "property-lists property-map";
+  grid-template-columns: 60% 40%;
+  flex-direction: row;
+`;
+
+const PokemonInfoContainer = styled.div`
+  position: relative;
+  height: 100vh;
 `;
 
 const RightPanel = styled.div`
   background-color: green;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex-grow: 2;
   height: 100%;
   margin-top: 56px;
   padding: 10px;
   position: fixed;
+  grid-area: property-map;
+  width: 40% !important;
   right: 0;
   top: 0;
-  width: 35%;
-`;
-
-const Row = styled.div`
-  align-items: flex-start;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 10px;
+  bottom: 0;
 `;
  
-export default Stuff;
+export default PokemonCatalog;

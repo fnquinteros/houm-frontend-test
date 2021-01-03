@@ -16,7 +16,7 @@ class Nav extends Component {
                 <NavUlContainer>
                     <ul className="nav navbar-left">
                       <NavItemContainer>
-                        <li className={this.getNavLinkClass("/stuff")}><NavLink to="/stuff"><NavItemText>Stuff</NavItemText></NavLink></li>
+                        <li className={this.getNavLinkClass("/catalog")}><NavLink to="/catalog"><NavItemText>Catalog</NavItemText></NavLink></li>
                       </NavItemContainer>
                       <NavItemContainer>
                         <li className={this.getNavLinkClass("/contact")}><NavLink to="/contact"><NavItemText>Contact</NavItemText></NavLink></li>

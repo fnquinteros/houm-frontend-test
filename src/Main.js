@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from "./views/Home";
-import Stuff from "./views/Stuff";
+import PokemonCatalog from "./views/PokemonCatalog";
 import Contact from "./views/Contact";
 import Navbar from "./components/Navbar";
 import Pokedex from "pokedex-promise-v2";
@@ -38,8 +38,8 @@ class Main extends Component {
           </nav>
           <div className="cards-content">
             <Switch>
-              <Route path="/stuff">
-                <Stuff />
+              <Route path="/catalog">
+                <PokemonCatalog />
               </Route>
               <Route path="/contact">
                 <Contact />
