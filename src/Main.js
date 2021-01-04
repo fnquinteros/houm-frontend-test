@@ -26,7 +26,7 @@ class Main extends Component {
   getPokemonByName = name => {
     var P = new Pokedex();
     P.getPokemonByName(name)
-    .then(response => this.setState({ pokedexResponse: response.toString() })) 
+    .then(response => console.log(response)) 
   }
 
   render() {

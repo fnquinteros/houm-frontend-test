@@ -1,4 +1,8 @@
 div.cards-content {
-  background-color: black;
   padding-top: 56px;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
 }

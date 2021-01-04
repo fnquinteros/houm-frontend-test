@@ -7,8 +7,9 @@ class PokemonCatalog extends Component {
   render() {
     return (
       <MainContainer>
-        <LeftPanel height='calc(100vh - 56px)'>
+        <LeftPanel desktopHeight='calc(100vh - 56px)' mobileHeight1000='calc(60vh - 40px)'  mobileHeight600='calc(60vh - 40px)'>
           <CardRow>
+            <PokemonCard pokemonName='Eevee' pokemonImageLink='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png'/>
             <PokemonCard />
             <PokemonCard />
             <PokemonCard />
@@ -22,7 +23,7 @@ class PokemonCatalog extends Component {
             <PokemonCard />
           </CardRow>
         </LeftPanel>
-        <RightPanel>
+        <RightPanel desktopHeight='calc(100vh - 56px)' mobileHeight1000='calc(40vh - 16px)'>
           <PokemonInfoContainer>
             <PokemonInfo />
           </PokemonInfoContainer>
@@ -36,44 +37,58 @@ const CardRow = styled.div`
   align-items: flex-start;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 10px;
   overflow-y: scroll;
-  flex-wrap: wrap;
 `;
 
 const LeftPanel = styled.div`
-  background-color: blue;
   display: flex;
   flex-direction: column;
   flex-grow: 3;
-  height: ${props => props.height};
+  height: ${props => props.desktopHeight};
+  @media screen and (max-width: 1000px) {
+    width: 100vw !important;
+    height: ${props => props.mobileHeight1000};
+  }
+  @media screen and (max-width: 600px) {
+    width: 100vw !important;
+    height: ${props => props.mobileHeight600};
+  }
+  z-index: 1;
 `;
 
 const MainContainer = styled.div`
-  background-color: red;
   display: grid;
+  flex-direction: row;
   grid-template-areas: "property-lists property-map";
   grid-template-columns: 60% 40%;
-  flex-direction: row;
 `;
 
 const PokemonInfoContainer = styled.div`
-  position: relative;
   height: 100vh;
+  position: relative;
 `;
 
 const RightPanel = styled.div`
   background-color: green;
+  bottom: 0;
   height: 100%;
   margin-top: 56px;
+  min-width: 400px;
   padding: 10px;
   position: fixed;
-  grid-area: property-map;
-  width: 40% !important;
   right: 0;
   top: 0;
-  bottom: 0;
+  width: 40% !important;
+  @media screen and (max-width: 1000px) {
+    left: 0;
+    top: auto;
+    width: 100% !important;
+    height: ${props => props.mobileHeight1000};
+  }
+  z-index: 0;
 `;
  
 export default PokemonCatalog;
