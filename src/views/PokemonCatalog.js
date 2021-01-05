@@ -100,7 +100,7 @@ class PokemonCatalog extends Component {
     return (
       <MainContainer>
         <LeftPanelContainer
-          desktopHeight='calc(100vh - 56px)'
+          desktopHeight='calc(100vh - 116px)'
           mobileHeight='calc(60vh - 100px)'
         >
           <FilterBarContainer>
