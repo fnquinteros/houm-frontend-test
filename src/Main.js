@@ -27,7 +27,7 @@ class Main extends Component {
                 <Contact />
               </Route>
               <Route path="/">
-                <Home />
+                <PokemonCatalog />
               </Route>
             </Switch>
           </div>
