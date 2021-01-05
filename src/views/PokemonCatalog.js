@@ -111,10 +111,7 @@ class PokemonCatalog extends Component {
               />
             </FilterBar>
           </FilterBarContainer>
-          <LeftPanel 
-            desktopHeight='calc(100vh - 56px)'
-            mobileHeight='calc(60vh - 40px)'
-          >
+          <LeftPanel>
             <CardRow>
               {
                 loadedList ? filteredPokemonNamesAndInfo.map(
@@ -156,9 +153,9 @@ class PokemonCatalog extends Component {
           </LeftPanel>
         </LeftPanelContainer>
         <RightPanelContainer>
-          {
-            loadedInfo ? (
-              <RightPanel desktopHeight='calc(100vh - 56px)' mobileHeight='calc(40vh - 16px)'>
+          <RightPanel desktopHeight='calc(100vh - 56px)' mobileHeight='calc(40vh - 16px)'>
+            {
+              loadedInfo ? (
                 <PokemonInfoContainer>
                   <PokemonInfo 
                     pokemonSelected={ pokemonSelected }
@@ -169,11 +166,11 @@ class PokemonCatalog extends Component {
                     pokemonName={ selectedName }
                   />
                 </PokemonInfoContainer>
-              </RightPanel>
             ) : (
               null
-            )
-          }
+              )
+            }
+          </RightPanel>
         </RightPanelContainer>
       </MainContainer>
     );
@@ -185,7 +182,7 @@ const CardRow = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 10px;
   overflow-y: scroll;
 `;
@@ -231,6 +228,7 @@ const LeftPanelContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: ${props => props.desktopHeight};
+  width: 100%;
   @media screen and (max-width: 1000px) {
     width: 100vw !important;
     height: ${props => props.mobileHeight};
@@ -240,8 +238,11 @@ const LeftPanelContainer = styled.div`
 const MainContainer = styled.div`
   display: grid;
   flex-direction: row;
-  grid-template-areas: "property-lists property-map";
   grid-template-columns: 60% 40%;
+  @media screen and (max-width: 1000px) {
+    width: 100vw !important;
+    height: ${props => props.mobileHeight};
+  }
 `;
 
 const PokemonInfoContainer = styled.div`
