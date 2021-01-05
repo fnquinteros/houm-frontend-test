@@ -182,9 +182,9 @@ const CardRow = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 const TextInput = styled.input`
