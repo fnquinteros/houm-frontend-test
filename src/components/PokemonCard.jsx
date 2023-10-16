@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-class PokemonCard extends Component {
-  handleClick = () => {
-    const { name } = this.props;
-    this.props.onClick(name);
-  }
+const PokemonCard = ({
+  id,
+  name,
+  onClick,
+  pokemonFormatedName,
+  pokemonImageLink,
+  url,
+}) => {
+  const handleClick = () => {
+    onClick(name);
+  };
 
-  render() {
-    const { 
-      pokemonImageLink,
-      pokemonFormatedName,
-    } = this.props
-    return (
-      <Container onClick={this.handleClick}>
-        <TitleContainer>
-          <ImageContainer>
-            <Image src={pokemonImageLink} />
-          </ImageContainer>
-          <BackgroundImageContainer>
-            <BackgroundImage src='https://i.pinimg.com/originals/ca/e0/1a/cae01ab5cce960db0d7819cc96e97ce8.png'/>
-          </BackgroundImageContainer>
-          <Title>{pokemonFormatedName}</Title>
-        </TitleContainer>
-      </Container>
-    )
-  }
-}
+  return (
+    <Container onClick={handleClick}>
+      <TitleContainer>
+        <ImageContainer>
+          <Image src={pokemonImageLink} />
+        </ImageContainer>
+        <BackgroundImageContainer>
+          <BackgroundImage src="https://i.pinimg.com/originals/ca/e0/1a/cae01ab5cce960db0d7819cc96e97ce8.png" />
+        </BackgroundImageContainer>
+        <Title>{pokemonFormatedName}</Title>
+      </TitleContainer>
+    </Container>
+  );
+};
 
 const BackgroundImage = styled.img`
   height: auto;
@@ -37,8 +37,8 @@ const BackgroundImage = styled.img`
   transform: translate(-60%, -100%);
   width: 350%;
   z-index: 0;
-  -ms-transform: translate(-60%,-100%);
-  -webkit-transform: translate(-60%,-100%);
+  -ms-transform: translate(-60%, -100%);
+  -webkit-transform: translate(-60%, -100%);
 `;
 
 const BackgroundImageContainer = styled.div`
@@ -67,8 +67,8 @@ const Image = styled.img`
   transform: translate(-35%, -78%);
   width: 100%;
   z-index: 1;
-  -ms-transform: translate(-35%,-78%);
-  -webkit-transform: translate(-35%,-78%);
+  -ms-transform: translate(-35%, -78%);
+  -webkit-transform: translate(-35%, -78%);
   -webkit-filter: drop-shadow(5px 10px 5px #222);
   filter: drop-shadow(5px 10px 5px #222);
   ${Container}:hover & {
@@ -83,7 +83,7 @@ const ImageContainer = styled.div`
 `;
 
 const Title = styled.h4`
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   color: white;
   font-family: Helvetica;
@@ -109,4 +109,4 @@ const TitleContainer = styled.div`
   width: 100%;
 `;
 
-export default PokemonCard
+export default PokemonCard;
