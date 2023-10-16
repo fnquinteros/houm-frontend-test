@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/houm-pokemarket/static/js/main.dedae631.chunk.js",
-    "main.js.map": "/houm-pokemarket/static/js/main.dedae631.chunk.js.map",
+    "main.js": "/houm-pokemarket/static/js/main.526930bf.chunk.js",
+    "main.js.map": "/houm-pokemarket/static/js/main.526930bf.chunk.js.map",
     "runtime-main.js": "/houm-pokemarket/static/js/runtime-main.e9d87dc9.js",
     "runtime-main.js.map": "/houm-pokemarket/static/js/runtime-main.e9d87dc9.js.map",
     "static/css/2.95f25948.chunk.css": "/houm-pokemarket/static/css/2.95f25948.chunk.css",
-    "static/js/2.0d9bfc42.chunk.js": "/houm-pokemarket/static/js/2.0d9bfc42.chunk.js",
-    "static/js/2.0d9bfc42.chunk.js.map": "/houm-pokemarket/static/js/2.0d9bfc42.chunk.js.map",
+    "static/js/2.00c996df.chunk.js": "/houm-pokemarket/static/js/2.00c996df.chunk.js",
+    "static/js/2.00c996df.chunk.js.map": "/houm-pokemarket/static/js/2.00c996df.chunk.js.map",
     "index.html": "/houm-pokemarket/index.html",
     "static/css/2.95f25948.chunk.css.map": "/houm-pokemarket/static/css/2.95f25948.chunk.css.map",
-    "static/js/2.0d9bfc42.chunk.js.LICENSE.txt": "/houm-pokemarket/static/js/2.0d9bfc42.chunk.js.LICENSE.txt"
+    "static/js/2.00c996df.chunk.js.LICENSE.txt": "/houm-pokemarket/static/js/2.00c996df.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e9d87dc9.js",
     "static/css/2.95f25948.chunk.css",
-    "static/js/2.0d9bfc42.chunk.js",
-    "static/js/main.dedae631.chunk.js"
+    "static/js/2.00c996df.chunk.js",
+    "static/js/main.526930bf.chunk.js"
   ]
 }
